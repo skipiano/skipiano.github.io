@@ -55,8 +55,9 @@ def is_Eulerian : Prop := p.is_trail ∧ ∀ e : G.E, p.edge_mem e
 ```
 
 Eulerian path proof
-<div>
+
 {{ "{% highlight lean"}}%}
+<div>
 lemma has_eulerian_path_iff : 
   G.has_eulerian_path ↔ card (filter {v : V | ¬ nat.even (G.degree v)} univ) ∈ ({0, 2} : finset ℕ) :=
 begin
