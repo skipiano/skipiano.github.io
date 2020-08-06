@@ -7,7 +7,7 @@ layout: home
 
 ---
 Definition of simple graph
-```javascript
+```lean
 universe u
 variables (V : Type u)
 /--
@@ -28,7 +28,7 @@ a `has_mem` instance.
 ```
 
 Definition of path
-```javascript
+```lean
 /-- Morally, a path is an alternating list of vertices and edges, 
   with incidences between adjacent objects -/
 @[ext] structure path :=
@@ -43,7 +43,7 @@ Definition of path
 ```
 
 Definition of other path stuff
-```javascript
+```lean
 /-- p.is_cycle if p starts and ends in the same place. -/
 def is_cycle : Prop := p.head = p.last
 
@@ -55,7 +55,7 @@ def is_Eulerian : Prop := p.is_trail ∧ ∀ e : G.E, p.edge_mem e
 ```
 
 Eulerian path proof
-```javascript
+```lean
 lemma has_eulerian_path_iff : 
   G.has_eulerian_path ↔ card (filter {v : V | ¬ nat.even (G.degree v)} univ) ∈ ({0, 2} : finset ℕ) :=
 begin
