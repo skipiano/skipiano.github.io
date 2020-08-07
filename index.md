@@ -6,6 +6,20 @@ layout: home
 
 
 ---
+
+## What is Lean?
+
+Lean is a theorem prover. You can explain mathematical concepts to it and also feed proofs. Apurva taught a class on Lean in his week 1 class, and if you want to learn more, you can check out his [website](https://apurvanakade.github.io/courses/lean_at_MC2020/index.html) for the class!
+
+There is also a community for Lean, and they've maintained a mathematical [library](https://leanprover-community.github.io/) for Lean.
+
+## What's the project about?
+
+There is a [list of 100 mathematical problems](https://www.cs.ru.nl/~freek/100/) that wants to be formalized. From that list Jalex recommended me that an easy topic was Eulerian graphs - specifically proving that the Konigsberg bridge does not have any Eulerian paths.
+
+Unfortunately, Lean did not have any graph API in the mathlib, so we had to come up with our own definition of graphs first and work with them from scratch.
+
+
 Definition of simple graph
 ```lean
 universe u
@@ -91,25 +105,6 @@ begin
     { sorry },
     use empty, split, exact empty_is_subgraph G,
 
-    -- convert G.induction_on _ _ _, refl,
-  
-  
-  
-  -- { rintro ⟨x, y, p, hep⟩,
-  --   have deg_cross := G.degree_eq_crossed p hep,
-  --   simp at *, 
-  --   by_cases x = y,
-  --   { left, convert finset.filter_false _,
-  --     { ext, simp [deg_cross, path_crossed, h] },
-  --     { apply_instance } },
-  --   { right,
-  --     have : finset.card {x, y} = 2, { rw [card_insert_of_not_mem, card_singleton], rwa mem_singleton },
-  --     convert this, ext, 
-  --     suffices : ¬(G.degree a).even ↔ a = x ∨ a = y, convert this; { simp; refl },
-  --     rw [deg_cross, path_crossed'], simp [h]; tauto,
-  --   }},
-  -- intro h, simp only [mem_insert, card_eq_zero, mem_singleton] at h, 
-  -- I think we need induction on the number of edges?
   split, rw empty_card_edges, have zero_neq : G.card_edges ≠ 0, contrapose! hG0,
   rw ← card_edges_eq_zero_iff, exact hG0, omega,
   intro x, intro y, exfalso, finish,
