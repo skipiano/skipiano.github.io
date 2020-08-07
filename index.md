@@ -19,8 +19,9 @@ There is a [list of 100 mathematical problems](https://www.cs.ru.nl/~freek/100/)
 
 Unfortunately, Lean did not have any graph API in the mathlib, so we had to come up with our own definition of graphs first and work with them from scratch.
 
+## Project Code
 
-Definition of simple graph
+### Definition of simple graph
 ```lean
 universe u
 variables (V : Type u)
@@ -41,7 +42,7 @@ a `has_mem` instance.
 (loopless : irreflexive adj . obviously)
 ```
 
-Definition of path
+### Definition of path
 ```lean
 /-- Morally, a path is an alternating list of vertices and edges, 
   with incidences between adjacent objects -/
@@ -56,7 +57,7 @@ Definition of path
   u ≠ v ∧ u ∈ edges.nth_le n hn ∧ v ∈ edges.nth_le n hn)
 ```
 
-Definition of other path stuff
+### Definition of other path properties
 ```lean
 /-- p.is_cycle if p starts and ends in the same place. -/
 def is_cycle : Prop := p.head = p.last
@@ -68,7 +69,7 @@ def is_trail : Prop := list.nodup p.edges
 def is_Eulerian : Prop := p.is_trail ∧ ∀ e : G.E, p.edge_mem e
 ```
 
-Eulerian path proof
+### Eulerian path proof
 
 ```lean
 lemma has_eulerian_path_iff : 
