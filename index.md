@@ -56,8 +56,7 @@ def is_Eulerian : Prop := p.is_trail ∧ ∀ e : G.E, p.edge_mem e
 
 Eulerian path proof
 
-{{ "{% highlight lean"}}%}
-<div>
+```lean
 lemma has_eulerian_path_iff : 
   G.has_eulerian_path ↔ card (filter {v : V | ¬ nat.even (G.degree v)} univ) ∈ ({0, 2} : finset ℕ) :=
 begin
@@ -116,5 +115,4 @@ begin
   intro x, intro y, exfalso, finish,
 end
 -- iff the number of vertices of odd degree is 0 or 2
-</div>
-{{ "{% endhighlight "}}%}
+```
