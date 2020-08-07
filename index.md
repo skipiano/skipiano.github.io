@@ -6,7 +6,7 @@ layout: home
 
 ---
 
-asfd
+> Lean is hard - Kenji
 
 ## What is Lean?
 
