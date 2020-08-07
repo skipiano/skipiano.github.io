@@ -16,7 +16,7 @@ There is also a community for Lean, and they've maintained a mathematical [libra
 
 ## What's the project about?
 
-There is a [list of 100 mathematical problems](https://www.cs.ru.nl/~freek/100/) that wants to be formalized. From that list Jalex recommended me that an easy topic was Eulerian graphs - specifically proving that the Konigsberg bridge does not have any Eulerian paths.
+There is a [list of 100 mathematical problems](https://www.cs.ru.nl/~freek/100/) that wants to be formalized. From that list Jalex recommended me a relatively easy topic of Eulerian graphs - more specifically, proving that the Konigsberg bridge do not have any Eulerian paths.
 
 Unfortunately, Lean did not have any graph API in the mathlib, so we had to come up with our own definition of graphs first and work with them from scratch.
 
