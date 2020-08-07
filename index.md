@@ -6,7 +6,7 @@ layout: home
 
 ---
 
-> Lean is hard - Kenji
+> Lean is hard - Kenji, probably
 
 ## What is Lean?
 
